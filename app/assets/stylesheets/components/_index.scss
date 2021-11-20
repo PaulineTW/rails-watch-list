@@ -1,0 +1,36 @@
+// Import your components CSS files here.
+@import "alert";
+@import "avatar";
+@import "navbar";
+
+.lists_banner {
+  background-image: url("banner.png");
+  // background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4))
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+
+  h1 {
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+}
+
+.lists_container {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  align-items: center;
+  flex-direction: row;
+  margin: 24px;
+
+   .card {
+    padding: 12px;
+    margin: 12px;
+    background-image: url("list_1.png");
+    background-size: cover;
+    background-position: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+}

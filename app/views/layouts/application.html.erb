@@ -5,11 +5,20 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  <div class="navbar">
+    <h1>Watch List</h1>
+    <%= link_to 'My Lists', lists_path, class: ""%>
+    <%= link_to 'New List', new_list_path, class: ""%>
+
+  </div>
     <%= yield %>
   </body>
 </html>
