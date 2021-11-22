@@ -1,13 +1,20 @@
-<div class="lists_banner">
+<div class="lists_banner d-flex align-items-center justify-content-between">
   <div class="container">
     <h1>My Lists</h1>
   </div>
 </div>
 
-<div class= "lists_container">
-<% @lists.each do |list| %>
-  <div class= "list_card">
-    <%= link_to list.name, list_path(list) %>
+<div class= "container py5">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+<div class="row">
+    <% @lists.each do |list| %>
+      <div class="co-12 colsm-6 col-md-4">
+        <%= link_to list_path(list), class:'text-decoration-none' do %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('list_3.png') %>)">
+            <%= list.name %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
   </div>
-<% end %>
 </div>

@@ -1,23 +1,12 @@
 // Import your components CSS files here.
 @import "alert";
-@import "avatar";
+@import "buttons";
 @import "navbar";
+@import "banner";
 
-.lists_banner {
-  background-image: url("banner.png");
-  // background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4))
-  background-size: cover;
-  background-position: center;
-  height: 500px;
 
-  h1 {
-    text-align: center;
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  }
-}
 
-.lists_container {
+.container {
   display: flex;
   justify-content: space-around;
   flex-flow: row wrap;
@@ -31,6 +20,11 @@
     background-image: url("list_1.png");
     background-size: cover;
     background-position: center;
+    justify-content: center;
+    align-items: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    text-decoration: none;
   }
 }
