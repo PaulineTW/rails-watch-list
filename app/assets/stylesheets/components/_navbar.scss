@@ -1,5 +1,11 @@
 .navbar {
   justify-content: space-between;
   background: white;
-}
+  border-bottom: 1px inset;
 
+
+  .new_list {
+    text-decoration: none;
+    color: inherit;
+  }
+}

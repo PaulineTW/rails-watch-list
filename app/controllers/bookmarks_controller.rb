@@ -12,6 +12,7 @@ class BookmarksController < ApplicationController
 
   def create
     @bookmark = Bookmark.new(bookmark_params)
+    @bookmark.list = @list
     @bookmark.save
     if @bookmark.save
       redirect_to list_path(@list)
@@ -22,7 +23,7 @@ class BookmarksController < ApplicationController
 
   def destroy
     @bookmark.destroy
-    redirect_to bookmarks_path
+    redirect_to list_path(@bookmark.list)
   end
 
   private

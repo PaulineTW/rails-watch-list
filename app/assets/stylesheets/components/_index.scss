@@ -3,8 +3,9 @@
 @import "buttons";
 @import "navbar";
 @import "banner";
-
-
+@import "card";
+@import "tags";
+@import "movies";
 
 .container {
   display: flex;
@@ -13,18 +14,4 @@
   align-items: center;
   flex-direction: row;
   margin: 24px;
-
-   .card {
-    padding: 12px;
-    margin: 12px;
-    background-image: url("list_1.png");
-    background-size: cover;
-    background-position: center;
-    justify-content: center;
-    align-items: center;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    text-decoration: none;
-  }
 }
