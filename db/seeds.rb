@@ -27,3 +27,25 @@ puts 'Creating 100 fake movies...'
   movie.save!
 end
 puts 'Finished!'
+
+require "json"
+require 'open-uri'
+
+# TODO: Write a seed to insert 10 posts in the database fetched from the Hacker News API.
+url = 'https://api.themoviedb.org/3/movie/76341?api_key=#{api_key}>>'
+api_key = '3a87723ebc462e38c05103f4c1e7b90e'
+movie_serialized = URI.open(url).read
+id_list = JSON.parse(movie_serialized).first(500)
+
+id_list.each do |id|
+  post_url = "https://hacker-news.firebaseio.com/v0/item/#{id}.json"
+  post_serialized = URI.open(post_url).read
+  post_hash = JSON.parse(post_serialized)
+  post = Post.new(
+    title: post_hash["title"],
+    url: post_hash["url"],
+    votes: post_hash["score"]
+  )
+  post.save
+end
+
