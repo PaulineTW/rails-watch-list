@@ -5,6 +5,7 @@
         <h3>Create a new list</h3>
         <%= simple_form_for @list do |f| %>
           <%= f.input :name, placeholder: 'Drama' %>
+          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
           <%= f.submit class: 'btn btn-flat' %>
         <% end %>
       </div>

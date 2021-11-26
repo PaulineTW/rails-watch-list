@@ -23,9 +23,9 @@ development:
   <<: *default
   database: rails-watch-list_development
 
-test:
-  <<: *default
-  database: rails-watch-list_test
+# test:
+#   <<: *default
+#   database: rails-watch-list_test
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
