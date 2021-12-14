@@ -1,6 +1,6 @@
 <div class="container py-5">
   <div class="row">
-    <div class="col-12 col-md-6 offset-lg-3">
+    <div class="col-xs-4 .col-sm-6 .col-md-8 offset-lg-3">
       <div class="bg-white rounded p-3 shadow">
         <h3>Add a movie to <%= @list.name %> list</h3>
         <%= simple_form_for [@list, @bookmark] do |f| %>
@@ -9,9 +9,6 @@
           <%= f.submit class: 'btn btn-flat' %>
         <% end %>
       </div>
-    </div>
-    <div class="col-12 col-md-6 offset-lg-3 mt-5">
-      <%= link_to 'Back to the list', root_path %>
     </div>
   </div>
 </div>
