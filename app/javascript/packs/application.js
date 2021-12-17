@@ -20,10 +20,10 @@ import 'bootstrap';
 
 
 document.addEventListener('turbolinks:load', () => {
-  initSelect2();
-  initTyped();
-  AOS.init();
-  initStarRating();
+  // initSelect2();
+  // initTyped();
+  // AOS.init();
+  // initStarRating();
 });
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -32,3 +32,5 @@ document.addEventListener('turbolinks:load', () => {
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+import "controllers"
