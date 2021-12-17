@@ -1,12 +1,15 @@
-<div class="movie-card">
-  <div class="bg-white rounded shadow h-100 m-4">
-    <%= image_tag movie.poster_url, alt: movie.title, class: 'movie-img rounded-top' %>
-    <div class="p-3 rounded-bottom d-flex flex-column">
-      <strong><%= movie.title %> <span class="text-muted font-weight-normal">
-      <br> 
-      <small class="text-muted"><%= movie.overview %></small>
-      <br> 
-      <%= link_to 'Add to list', class: 'btn btn-outline-dark' %>
-    </div>
+<div class="movie-card" data-controller="edit-movie" data-edit-movie-target="card">
+  <%= image_tag movie.poster_url %>
+
+  <div class="movie-infos <%= 'd-none' if movie.errors.any? %>" data-edit-movie-target="infos">
+    <h2 title="<%= movie.title %>">
+      <%= movie.title %><small></small>
+    </h2>
+    <i class="fas fa-pen fa-xs ml-2" data-action="click->edit-movie#displayForm"></i>
   </div>
+
+  <%= simple_form_for movie, html: { class: movie.errors.any? ? '' : 'd-none', data: { edit_movie_target: 'form', action: 'submit->edit-movie#update' } } do |f| %>
+    <%= f.input :title %>
+    <%= f.submit "Update movie", class: "btn btn-sm btn-primary btn-block mt-2" %>
+  <% end %>
 </div>

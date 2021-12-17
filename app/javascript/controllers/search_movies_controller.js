@@ -8,16 +8,13 @@ export default class extends Controller {
     console.log(this.inputTarget);
     console.log(this.listTarget);
   }
-  
-  update(event) {
-    console.log('TODO: send request in AJAX');
-  }
-  update(event) {
+
+  update() {
     const url = `${this.formTarget.action}?query=${this.inputTarget.value}`
     fetch(url, { headers: { 'Accept': 'text/plain' } })
-    .then(response => response.text())
-    .then((data) => {
-      this.listTarget.outerHTML = data;
-    })
+      .then(response => response.text())
+      .then((data) => {
+        this.listTarget.outerHTML = data;
+      })
   }
 }
