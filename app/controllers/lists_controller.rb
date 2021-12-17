@@ -1,5 +1,4 @@
 class ListsController < ApplicationController
-
   before_action :find_list, only: [:show, :edit, :destroy]
 
   def index
@@ -7,6 +6,8 @@ class ListsController < ApplicationController
   end
 
   def show
+    @bookmark = Bookmark.new
+    # @review = Review.new(list: @list)
   end
 
   def new
@@ -31,7 +32,7 @@ class ListsController < ApplicationController
       private
 
   def list_params
-    params.require(:list).permit(:name, photos: [])
+    params.require(:list).permit(:name, :photo)
   end
 
   def find_list

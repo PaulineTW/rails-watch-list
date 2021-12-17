@@ -1,18 +1,15 @@
 <div class="banner_list">
   <div class="card-category card-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('banner.png') %>)">
-    <h1>My lists</h1>
+  <h1>Save any kind of movies</h1>
   </div>
 </div>
-
 <div class= "container py5">
   <div class="d-flex align-items-center justify-content-center mb-3">
     <div class="row">
       <% @lists.each do |list| %>
-        <div class="col-12 col-sm-6 col-md-4">
+        <div class="col-12 col-sm-6 col-md-4 mb-3">
           <%= link_to list_path(list), class:'text-decoration-none text-muted' do %>
-          <% images = ['list_1.png', 'list_2.png', 'list_3.png', 'list_4.png', 'list_5.png', 'list_6.png', 'list_7.png'] %>
-          <% random_number = rand(1..images.length) %>
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path("list_#{random_number}.png") %>)">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : asset_path('list_1.png') %>)">
               <%= list.name %>
             </div>
           <% end %>
@@ -21,6 +18,3 @@
     </div>
   </div>
 </div>
-
-
-
